@@ -5,9 +5,16 @@
 body {
   margin:0;
   padding:0; 
-  @apply bg-socialBg
+  background-color: #F5F7FB;
+  
 }
 
+a{
+  text-decoration : none;
+}
+li {
+  list-style-type: none;
+}
 
 /* SideBar */
 .sidecard{
@@ -19,8 +26,6 @@ body {
     py-2 
     text-xl 
     font-bold  
-    capitalize 
-    text-socialBlue
 }
 
 /* Forms */
@@ -59,3 +64,32 @@ body {
 }
 
 /* Posts */
+
+.videoicons{
+   @apply 
+   flex 
+   items-center 
+   justify-start 
+   gap-1 
+   text-lg
+}
+
+  /* DropDown */
+
+.dropdownlist{
+    @apply 
+    text-left 
+    text-sm 
+    my-1 
+    transition 
+    duration-500 
+    ease-out
+     hover:bg-socialBlue 
+    hover:text-white 
+    rounded
+    flex
+    items-center
+    gap-1
+    border
+    p-2
+}

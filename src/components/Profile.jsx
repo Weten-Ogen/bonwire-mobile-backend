@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-import avatar from '../public/marcus.png';
+import avatar from '../../public/marcus.png';
 
 
 export default function Profile() {

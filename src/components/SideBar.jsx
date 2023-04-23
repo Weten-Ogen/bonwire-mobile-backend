@@ -10,26 +10,26 @@ export default function SideBar() {
     <div className='hidden md:block'>
       <Card>
         <h2 className='mb-2 '>Navigation</h2>
-       <ul className='flex flex-col items-start justify-evenly ml-2'>
-        <li className='flex items-center gap-2 icons mt-1'> 
+       <ul className='flex flex-col items-start justify-evenly ml-2 text-gray-600'>
+        <li className='flex items-center gap-2 icons mt-1 '> 
                 <IoHomeOutline  className='text-xl'/>
-                <a href='' className='block '>Home</a>
+                <a href='' className='block text-gray-400 '>Home</a>
             </li>
             <li className='flex items-center gap-2 mt-3 icons'> 
                 <IoPersonOutline className='text-xl'/>
-                <a href='' className='block'>Friends</a>
+                <a href='' className='block text-gray-400'>Friends</a>
             </li>
             <li className='flex items-center gap-2 mt-3 icons'> 
                 <BsBookmark className='text-xl'/>
-                <a href='' className='block'>Saved Post</a>
+                <a href='' className='block text-gray-400'>Saved Post</a>
             </li>
             <li className='flex items-center gap-2 mt-3 icons'> 
                 <BsBell className='text-xl'/>
-                <a href='' className='block'>Notifications</a>
+                <a href='' className='block text-gray-400'>Notifications</a>
             </li>
             <li className='flex items-center gap-2 mt-3 mb-4 icons'> 
                 <IoLogOutOutline className='text-xl'/>
-                <a href='' className='block'>Logout</a>
+                <a href='' className='block text-gray-400'>Logout</a>
             </li>
        </ul>
     

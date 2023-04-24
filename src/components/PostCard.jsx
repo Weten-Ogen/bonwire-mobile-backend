@@ -9,10 +9,14 @@ import DropDown from './DropDown';
 
 
 export default function PostCard() {
+    
     const [showDropdown, setShowDropdown] = useState(false);
     const handleDropdown = () => {
       setShowDropdown(prev  => !prev);
     }
+
+
+
   return (
    <section className='my-5'>
     <Card>
@@ -22,12 +26,13 @@ export default function PostCard() {
           <div className='mb-2 grow'>
             <div className='flex justify-between items-center '>
               {/* title */}
-              <p>John Doe shared a
-                <span className='text-socialBlue normal'> post 
+              <p className='text-gray-600'>
+                <span className='cursor-pointer text-gray-800'>John Doe </span>shared a
+                <span className='text-socialBlue normal cursor-pointer'> post 
                 </span>
               </p>
-              {/* threedots */}
-              <div className='text-gray-800 cursor-pointer'>
+              {/* threedots   and  dropdown*/}
+              <div className='text-gray-800 cursor-pointer flex flex-col  gap-5 realative'>
                 <BsThreeDots onClick={handleDropdown} className='c'/>
                 {showDropdown&&<DropDown/>}
               </div>

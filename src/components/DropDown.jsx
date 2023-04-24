@@ -4,11 +4,11 @@ import { BsTrash,BsBookmark,BsExclamationTriangle, BsBell } from 'react-icons/bs
 
 
 export default function DropDown() {
+  
   return (
-    <div className='relative '>
-        <div className='absolute  -left-200 w-[150px]
+    <div className='absolute mt-4 right-[30px]  lg:right-[380px] z-50 object-contain'>
+        <div className='
          text-gray-600 
-        
          '>
           <Card>
               <li className='dropdownlist'>
@@ -22,13 +22,13 @@ export default function DropDown() {
               <hr/>
               </li>
               <li className='dropdownlist'>
-                <BsExclamationTriangle/>
-                <p>hide</p>
+                <BsTrash/>
+                <p>delete</p>
                 <hr/>
               </li>
               <li className='dropdownlist'>
-                <BsTrash/>
-                <p>delete</p>
+                <BsExclamationTriangle/>
+                <p>hide</p>
                 <hr/>
               </li>
           </Card>

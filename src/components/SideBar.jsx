@@ -6,37 +6,35 @@ import {IoLogOutOutline,IoHomeOutline, IoPersonOutline } from 'react-icons/io5'
 
 
 export default function SideBar() {
+  const activeElement = 'active icons';
+  const nonActiveElement = 'nonactive icons';
+
   return (
     <div className='hidden md:block'>
       <Card>
         <h2 className='mb-2 '>Navigation</h2>
        <ul className='flex flex-col items-start justify-evenly ml-2 text-gray-600'>
-        <li className='flex items-center gap-2 icons mt-1 '> 
+        <li className={`${activeElement} mt-2`}> 
                 <IoHomeOutline  className='text-xl'/>
-                <a href='' className='block text-gray-400 '>Home</a>
+                <a href='' className='block  '>Home</a>
             </li>
-            <li className='flex items-center gap-2 mt-3 icons'> 
+            <li className={`${nonActiveElement} mt-3`}> 
                 <IoPersonOutline className='text-xl'/>
-                <a href='' className='block text-gray-400'>Friends</a>
+                <a href='' className='block '>Friends</a>
             </li>
-            <li className='flex items-center gap-2 mt-3 icons'> 
+            <li  className={`${nonActiveElement} mt-3`}> 
                 <BsBookmark className='text-xl'/>
-                <a href='' className='block text-gray-400'>Saved Post</a>
+                <a href='' className='block '>Saved Post</a>
             </li>
-            <li className='flex items-center gap-2 mt-3 icons'> 
+            <li className={`${nonActiveElement} mt-3`}> 
                 <BsBell className='text-xl'/>
-                <a href='' className='block text-gray-400'>Notifications</a>
+                <a href='' className='block '>Notifications</a>
             </li>
-            <li className='flex items-center gap-2 mt-3 mb-4 icons'> 
+            <li className={`${nonActiveElement} my-3`}> 
                 <IoLogOutOutline className='text-xl'/>
-                <a href='' className='block text-gray-400'>Logout</a>
+                <a href='' className='block '>Logout</a>
             </li>
-       </ul>
-    
-       
-       
-        
- 
+       </ul>       
       </Card>
     </div>
   )

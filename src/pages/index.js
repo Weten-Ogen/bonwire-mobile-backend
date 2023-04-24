@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <main className={darkMode? 'dark': ''}>
        <section className='mt-5 md:max-w-5xl  flex items-start mx-auto gap-6'>
-          <div className='hidden md:block   lg:w-2/5'>
+          <div className='hidden md:block   lg:w-1/5'>
             <SideBar/>
           </div>
           <div className=' w-full h-full lg:w-3/5 sm:w-3/5 flex flex-col '>

@@ -22,16 +22,16 @@ export default function Form() {
         </form>
         <div className=' flex items-center gap-5 text-gray-600 mt-2'>
             <p className='flex items-center gap-1 icons'>
-                <BsPersonFill className='text-2xl text-blue-400'/>
+                <BsPersonFill className='text-2xl text-blue- hover:text-white'/>
                 <span>people</span>
             </p>
             <p className='flex items-center gap-1 icons'>
-                <IoLocationOutline className='text-2xl text-blue-400'/>
+                <IoLocationOutline className='text-2xl text-blue- hover:text-white'/>
                 <span>check-In</span>
             </p>
            
             <p className='flex items-center gap-1 icons'>
-                <BsEmojiSmile className='text-2xl text-blue-400'/>
+                <BsEmojiSmile className='text-2xl text-blue- hover:text-white'/>
                 <span>mood</span>
             </p>
             <button 

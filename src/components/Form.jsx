@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from './CardLink'
+import Card from './Card'
 import Image from 'next/image';
 import {IoLocationOutline } from 'react-icons/io5';
 import {BsEmojiSmile,BsPersonFill } from 'react-icons/bs';
@@ -9,11 +9,11 @@ import Profile from './Profile';
 export default function Form() {
   return (
     <div className='mb-4 '>
-      <Card>
+      <Card cardProp={'homecards'}>
        <div className=''>
        <form className='flex items-start pt-2  gap-3 text-slate-500 hover:ring hover:ring-gray-200 p-2 rounded relative'>
             
-            <Profile/>
+            <Profile styleProp={'homeprofilepic'}/>
            <textarea
            placeholder='what is on your mind'
             type='text'

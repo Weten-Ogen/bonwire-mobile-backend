@@ -15,6 +15,9 @@ module.exports = {
         socialBlue5: '#308EFB',
         
       },
+      screens: {
+        xs:'388px'
+      },
      
     },
   },

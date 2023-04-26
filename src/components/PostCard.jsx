@@ -2,10 +2,10 @@ import React,{useState} from 'react';
 import Profile from './Profile';
 import {BsHeart,BsHeartFill,BsImage,BsShareFill,BsThreeDots } from 'react-icons/bs';
 import {FaCommentAlt } from 'react-icons/fa';
-import Card from './CardLink';
+import Card from './Card';
 import { ClickOutHandler } from 'react-clickout-ts';
 import DropDown from './DropDown';
-
+import Link from 'next/link';
 
 
 export default function PostCard() {
@@ -21,13 +21,17 @@ export default function PostCard() {
    <section className='my-5'>
     <Card>
       <div className='flex items-start gap-4 '>
-        <Profile/>
+        <Profile styleProp={'homeprofilepic'} />
             {/* Header */}
           <div className='mb-2 grow'>
             <div className='flex justify-between items-center '>
               {/* title */}
               <p className='text-gray-600'>
-                <span className='cursor-pointer text-gray-800'>John Doe </span>shared a
+                <Link className='px-1' href='/profile'>
+                  <span className='cursor-pointer text-gray-800'>John Doe 
+                  </span>
+                </Link>
+                shared a
                 <span className='text-socialBlue normal cursor-pointer'> post 
                 </span>
               </p>
@@ -77,7 +81,7 @@ export default function PostCard() {
               {/* add a comment */}
               <div className='flex relative my-3'>
                 <div>
-                  <Profile/>
+                  <Profile styleProp={'homeprofilepic'}/>
                 </div>
                   <textarea 
                       className='p-2 bg-gray-200 text-gray-900 outline-none ring ring-gray-200 ml-2 rounded grow h-[50px]'

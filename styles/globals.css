@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin:0;
+  padding:0; 
+  /* background-color: #F5F7FB; */
+  background-color:black;
+  
+}
+
+a{
+  text-decoration : none;
+}
+li {
+  list-style-type: none;
+}
+
+
+
+/* PROFILE */
+.generalprofilepic{
+  @apply  
+   
+  object-cover 
+  rounded-full 
+}
+.homeprofilepic{
+  @apply
+  h-12 
+  w-12
+}
+
+
+
+/*HOME CARD STYLING */
+.homecard{
+  @apply
+  px-4
+  py-2
+  text-xl  
+  bg-white 
+  shadow-lg 
+  rounded-md
+}
+
+
+/* Forms */
+.formbtn{
+  @apply
+  capitalize 
+  text-right 
+  ml-auto
+  py-2
+  px-4
+  bg-socialBlue 
+  rounded 
+  text-white
+
+}
+/* forms icons */
+.icons{
+    @apply
+    flex
+    items-center
+    gap-1
+    overflow-hidden
+     transition
+     ease-out
+     duration-200
+     transform
+     hover:text-white
+      hover:bg-socialBlue
+     hover:skew-x-3
+    cursor-pointer
+    w-full
+    rounded
+    xs:p-0
+    md:p-2
+}
+/* LINK STYLES */
+.sidebarli{
+  @apply
+  flex
+    items-center
+    gap-2
+  hover:text-white
+  hover:bg-socialBlue
+  active:bg-socialBlue
+  transform
+  focus:-translate-y-0.5
+  py-2
+  px-4
+    
+    
+}
+.sidebarlinks{
+  @apply
+  active:bg-socialBlue
+  cursor-pointer
+  w-full
+  overflow-hidden
+  transition
+  ease-out
+  duration-200
+  rounded
+  font-bold
+  my-1
+}
+
+
+
+
+.btn{
+  @apply
+   transition
+   ease-out
+   duration-200
+   transform
+   hover:skew-x-6
+   hover:bg-socialBlue5
+   
+}
+
+
+/* Posts */
+
+.videoicons{
+   @apply 
+   flex 
+   items-center 
+   justify-start 
+   gap-1 
+   text-lg
+}
+
+  /* DropDown */
+
+.dropdownlist{
+    @apply 
+    text-left 
+    text-sm 
+    my-1 
+    transition 
+    duration-500 
+    ease-out
+     hover:bg-socialBlue 
+    hover:text-white 
+    rounded
+    flex
+    items-center
+    gap-1
+    border
+    p-2
+}
+
+/* PROFILE PAGE */
+/* HEADER IMG */
+
+.profilecard{
+  @apply 
+  text-xl  
+  bg-white 
+  shadow-lg 
+  rounded-lg
+}
+.profilepage{
+  @apply
+  h-[100px]
+  w-[100px]
+  object-cover
+  rounded-full
+  ml-3
+  absolute
+  top-[50px]
+  
+
+
+}
+/* HEADER INFORMATION */
+.profileheaderinfo{
+  @apply 
+  absolute 
+  -bottom-10
+  shadow-lg
+  rounded-b-md
+  left-0 
+  z-40 
+  bg-white
+  w-full 
+  h-[210px]
+}
+
+/* profilepic in profilepage */
+.profileprofilepic{
+  @apply
+    h-[90px]
+    w-[90px]
+    rounded-full
+    absolute 
+    -top-16
+    pb-2
+    px-2
+   
+
+}
+
+.profilenavlinks{
+  @apply
+   px-2
+   pb-1
+   capitalize
+   flex
+   items-center
+   gap-1
+   hover:border-socialBlue
+   hover:text-socialBlue
+   hover:font-bold
+  hover:border-b-2
+  transition
+  focus:text-socialBlue
+  duration-200
+  ease-out  
+  text-gray-600
+
+}
+
+.profileactivelinks{
+  @apply
+  border-b-2
+  border-socialBlue
+}
+
+.profilenavitems{
+  @apply
+  hover:bg-socialBlue5
+  hover:text-white;
+  
+}

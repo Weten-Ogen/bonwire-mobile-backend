@@ -87,6 +87,9 @@ li {
     gap-2
   hover:text-white
   hover:bg-socialBlue
+  active:bg-socialBlue
+  transform
+  focus:-translate-y-0.5
   py-2
   px-4
     
@@ -94,7 +97,7 @@ li {
 }
 .sidebarlinks{
   @apply
-  
+  active:bg-socialBlue
   cursor-pointer
   w-full
   overflow-hidden
@@ -103,17 +106,11 @@ li {
   duration-200
   rounded
   font-bold
+  my-1
 }
-.active{
-  @apply
-  bg-socialBlue
-  text-white
-}
-.nonactive{
-  @apply
-  bg-white
-  text-gray-600
-}
+
+
+
 
 .btn{
   @apply
@@ -166,7 +163,7 @@ li {
   text-xl  
   bg-white 
   shadow-lg 
-  rounded-md
+  rounded-lg
 }
 .profilepage{
   @apply
@@ -198,11 +195,46 @@ li {
 /* profilepic in profilepage */
 .profileprofilepic{
   @apply
-    h-[100px]
-    w-[100px]
+    h-[90px]
+    w-[90px]
     rounded-full
     absolute 
     -top-16
+    pb-2
+    px-2
    
 
+}
+
+.profilenavlinks{
+  @apply
+   px-2
+   pb-1
+   capitalize
+   flex
+   items-center
+   gap-1
+   hover:border-socialBlue
+   hover:text-socialBlue
+   hover:font-bold
+  hover:border-b-2
+  transition
+  focus:text-socialBlue
+  duration-200
+  ease-out  
+  text-gray-600
+
+}
+
+.profileactivelinks{
+  @apply
+  border-b-2
+  border-socialBlue
+}
+
+.profilenavitems{
+  @apply
+  hover:bg-socialBlue5
+  hover:text-white;
+  
 }

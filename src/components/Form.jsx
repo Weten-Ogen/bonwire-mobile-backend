@@ -35,7 +35,7 @@ export default function Form() {
                 <span>mood</span>
             </p>
             <button 
-             className='formbtn btn'>share</button>
+             className='formbtn btn '>share</button>
         </div>
        </div>
       </Card>

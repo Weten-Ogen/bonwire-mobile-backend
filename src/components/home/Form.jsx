@@ -3,7 +3,7 @@ import Card from './Card'
 import Image from 'next/image';
 import {IoLocationOutline } from 'react-icons/io5';
 import {BsEmojiSmile,BsPersonFill } from 'react-icons/bs';
-import Profile from './Profile';
+import Profile from '../Profile';
 
 
 export default function Form() {

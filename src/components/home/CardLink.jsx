@@ -1,7 +1,7 @@
 
 export default function Card({children}) {
   return (
-    <div className="sidecard">
+    <div className="homecard">
       {children}
     </div>
   )

@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image';
 import Profile from '../../components/Profile';
-import ProfileCard from '../../components/ProfileCard';
-import ProfileInfo from '../../components/ProfileInfo';
+import ProfileCard from '../../components/profile/ProfileCard';
+import ProfileInfo from '../../components/profile/ProfileInfo';
 import Link from 'next/link';
 import {BsExclamationCircle,BsPeople, BsImage, BsFillFilePostFill } from 'react-icons/bs';
 import { Post } from '../../components';
 import { useRouter } from 'next/router';
-import ProfileOtherDetails from '../../components/ProfileOtherDetails';
+import ProfileOtherDetails from '../../components/profile/ProfileOtherDetails';
 
 
 
@@ -61,7 +61,7 @@ export default function ProfilePage() {
             </div>
             </section>
             <section>
-              <nav className='flex gap-0 sm:gap-2 md:gap-3 captalize mt-5'>
+              <nav className='flex gap-1 sm:gap-2 md:gap-3 captalize mt-5'>
                 <Link className={isPosts || pathname === "" ? activeClass : tabClasses} href='/profile/posts'>
                  
                   <BsFillFilePostFill/>

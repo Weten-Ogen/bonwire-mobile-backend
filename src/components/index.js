@@ -1,6 +1,6 @@
 import SideBar from "./SideBar";
-import Form from "./Form";
-import Post from "./Post";
+import Form from "./home/Form";
+import Post from "./home/Post";
 
 
 

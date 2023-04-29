@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import Profile from './Profile';
+import Profile from '../Profile';
 import {BsHeart,BsHeartFill,BsImage,BsShareFill,BsThreeDots } from 'react-icons/bs';
 import {FaCommentAlt } from 'react-icons/fa';
 import Card from './Card';
@@ -18,7 +18,7 @@ export default function PostCard() {
 
 
   return (
-   <section className='my-5'>
+   <section className='my-8'>
     <Card>
       <div className='flex items-start gap-4 '>
         <Profile styleProp={'homeprofilepic'} />
@@ -55,7 +55,6 @@ export default function PostCard() {
       <div className=' mt-4 rounded bg-gray-900  w-full h-[300px] flex items-center '>
                 {/* video */}
                 <video 
-                autoPlay='true'
                 className='w-full'  
                   src=''>
                 </video>

@@ -1,5 +1,5 @@
 import React from 'react'
-import  Post  from './Post';
+import  Post  from '../home/Post';
 import About from './About';
 import Friends from './Friends';
 import Photos from './Photos';

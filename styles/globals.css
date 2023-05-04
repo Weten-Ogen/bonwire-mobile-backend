@@ -37,7 +37,7 @@ li {
 /*HOME CARD STYLING */
 .homecard{
   @apply
-  px-4
+  px-2
   py-2
   text-xl  
   bg-white 
@@ -79,7 +79,20 @@ li {
     xs:p-0
     md:p-2
 }
-/* LINK STYLES */
+/*SideBar LINK STYLES */
+.sidebartooltips{
+  @apply
+  before:absolute
+  before:text-socialBlue5
+  before:-top-3
+  before:left-16
+  before:h-7
+  before:z-10
+  before:hover:capitalize
+
+
+
+}
 .sidebarli{
   @apply
   flex
@@ -91,7 +104,7 @@ li {
   transform
   focus:-translate-y-0.5
   py-2
-  px-4
+  px-6
     
     
 }
@@ -99,7 +112,7 @@ li {
   @apply
   active:bg-socialBlue
   cursor-pointer
-  w-full
+  md:w-full
   overflow-hidden
   transition
   ease-out
@@ -236,5 +249,82 @@ li {
   @apply
   hover:bg-socialBlue5
   hover:text-white;
-  
+}
+
+/* FRIENDS PAGE  */
+.profilefriendsoutersec{
+  @apply 
+  flex
+  items-start
+  gap-2
+  py-2
+}
+.profilefriendslistimage{
+  @apply
+  h-16
+  w-16
+}
+
+/* SAVED PAGE STYLING ***** */
+.savedpagescard{
+  @apply
+  bg-white
+  shadow-lg
+  w-full
+  p-3
+  rounded-lg
+}
+
+/* LOGIN && lOGOUT PAGE */
+.logincard{
+  @apply
+   py-4
+   px-2
+   text-2xl 
+   rounded-lg 
+   shadow-lg 
+   max-w-[500px]
+}
+
+
+
+.logininputelement{
+  @apply
+  py-3
+  px-2
+  mb-3
+  rounded 
+  w-full 
+  my-2
+  transition
+  ease-out
+  hover:opacity-90
+  outline-none
+  focus:ring
+  focus:ring-socialBlue
+  focus:ring-offset-2
+}
+
+.loginbutton{
+  @apply
+    mt-6
+    text-3xl
+  bg-socialBlue
+  text-white
+    px-2
+    py-4 
+    w-full 
+    my-3 
+    rounded
+    mx-auto 
+    outline-none
+    transition
+    duration-200
+    transform
+    hover:ring-1
+    hover:-translate-y-0.5
+    focus:ring-offset-2
+    hover:bg-blue-600
+    capitalize
+    ease-out
 }

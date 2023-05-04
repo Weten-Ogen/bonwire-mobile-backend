@@ -5,14 +5,18 @@ import { SideBar } from '../components';
 
 
 
-export default function Layout({children}) {
+export default function Layout({children,hideNavigation}) {
   return (
     <main>
-      <section className='mt-5 w-full md:max-w-6xl  flex items-start mx-auto gap-2 '>
-          <div className='hidden lg:block  lg:w-1/5'>
-            <SideBar/>
-          </div>
-          <div className='w-full h-full mx-auto lg:w-3/5  flex flex-col p-5 md:px-10 lg:p-0'>
+      <section className='lg:mt-5  w-full lg:max-w-8xl  lg:flex lg:items-start mx-auto lg:justify-center lg:gap-2 '>
+        {!hideNavigation && 
+        
+        <div className='block w-full lg:w-1/5'>
+          <SideBar/>
+        </div>
+        
+        }
+    <div className={hideNavigation? 'w-full':'w-full h-full mx-auto lg:w-3/5  flex flex-col p-5 lg:px-10 lg:p-0'}>
             {children}
           </div>
        </section>

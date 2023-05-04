@@ -79,7 +79,20 @@ li {
     xs:p-0
     md:p-2
 }
-/* LINK STYLES */
+/*SideBar LINK STYLES */
+.sidebartooltips{
+  @apply
+  before:absolute
+  before:text-socialBlue5
+  before:-top-3
+  before:left-16
+  before:h-7
+  before:z-10
+  before:hover:capitalize
+
+
+
+}
 .sidebarli{
   @apply
   flex

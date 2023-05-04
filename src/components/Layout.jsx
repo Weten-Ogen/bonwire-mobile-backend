@@ -8,7 +8,7 @@ import { SideBar } from '../components';
 export default function Layout({children,hideNavigation}) {
   return (
     <main>
-      <section className='lg:mt-5  w-full lg:max-w-6xl  lg:flex lg:items-start mx-auto lg:gap-2 '>
+      <section className='lg:mt-5  w-full lg:max-w-8xl  lg:flex lg:items-start mx-auto lg:justify-center lg:gap-2 '>
         {!hideNavigation && 
         
         <div className='block w-full lg:w-1/5'>

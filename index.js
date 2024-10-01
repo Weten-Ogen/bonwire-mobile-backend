@@ -12,7 +12,9 @@ app.use(express.json())
 app.use('/api/products',product_router)
 app.use('/api/users',users_router)
 
-
+app.get('/', (req,res) => {
+    res.send('welcome to hell week')
+})
 app.listen(5000, () => {
     console.log('started successfully')
 })

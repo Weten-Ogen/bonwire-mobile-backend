@@ -1,14 +1,18 @@
 const express = require('express')
-const dotenv = require('dotenv').config()
+const dotenv = require('dotenv')
+const product_router = require('./routes/productRoutes.js')
+const users_router = require('./routes/userRoute.js')
 
+dotenv.config()
 
+// initialize the app 
 const app = express()
-const PORT = process.env.PORT || 5000
+
+app.use(express.json())
+app.use('/api/products',product_router)
+app.use('/api/users',users_router)
 
 
-app.use("/api/products",require("./routes/productRoute.js"))
-
-
-app.listen(PORT, () => {
-    console.log('app started successfully ...')
+app.listen(5000, () => {
+    console.log('started successfully')
 })

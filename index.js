@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const product_router = require('./routes/productRoutes.js');
 const users_router = require('./routes/userRoute.js');
 const { PrismaClient, Prisma } = require('@prisma/client');
-;
+const auth_router = require('./routes/authRoute.js')
 const prisma = new PrismaClient();
 
 
@@ -15,7 +15,7 @@ const app = express()
 app.use(express.json())
 app.use('/api/products',product_router)
 app.use('/api/users',users_router)
-
+app.use('/api/auth', auth_router)
 app.get('/', (req,res) => {
     res.send('Welcome back to bonewireApp')
 })

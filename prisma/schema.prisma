@@ -4,27 +4,23 @@ generator client {
 datasource db {
   provider = "postgresql"
   url = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  directUrl = env("POSTGRES_URL_NON_POOLING") 
 }
 
 model User {
   id  String @id  @default(cuid()) 
   firstName String 
   lastName String
-  Email String @unique
-  contact String
+  email String @unique
+  contact Int
   country String
   createdAt DateTime @default(now())
   updateAt DateTime
   role Role @default(USER)
+  cartId String @unique
+  cart Cart?
 }
 
-enum Role {
-  USER
-  ADMIN
-  BLOCK
-  GUESS
-}
 
 model Product{
   id String @id @default(cuid())
@@ -39,15 +35,21 @@ model Cart {
   id String @id @default(cuid())
   totalItems BigInt @default(0)
   sumOfPrice BigInt @default(0)
-  products : CartItem[]  
+  cartItems  CartItem[]  
+  userId String @unique
+  user User @relation(fields: [userId],references: [id])
 }
-
-model CartItem {
+model CartItem{
   id String @id @default(cuid())
   label String
-  cartId String 
-  cart Cart @relation(field: [cartId], refrences: [id])
+  cartId String @unique
   image String
   price BigInt
   count Int @default(0)
+  cart Cart @relation(fields: [cartId],references: [id])
+}
+
+enum Role {
+  USER
+  ADMIN
 }

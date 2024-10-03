@@ -9,9 +9,6 @@ const { hash } = require('bcrypt');
 const register  = asyncHandler(async(req,res) => {
     try {        
         const {email,firstName,lastName,password,country} = await req.body
-        
-
-        console.log(userExisted)
         const salt = 10
         const hashPassword = await bcrypt.hashPassword(password, salt)
         console.log(hashPassword)

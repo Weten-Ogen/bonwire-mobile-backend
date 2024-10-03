@@ -18,23 +18,8 @@ const register  = asyncHandler(async(req,res) => {
 
         console.log(userExisted)
         const salt = 10
-        const hashPassword = bcrypt.hashPassword(password, salt)
-        // if(!exists) {
-        //     console.log(hashPassword)
-        //     const newuser = await prisma.user.create({
-        //         data: {
-        //             email,
-        //             firstName,
-        //             lastName,
-        //             password:hashPassword,
-        //             country
-        //         }
-        //     })
-        //     return  res.status(201).json({message: newuser})
-        // }else {
-        //     return res.status(409).json({message: "This email already exist , login in "})
-
-        // }
+        const hashPassword = await bcrypt.hashPassword(password, salt)
+        console.log(hashPassword)
     } catch (error) {
         return res.status(500).json({message: error})     
     }

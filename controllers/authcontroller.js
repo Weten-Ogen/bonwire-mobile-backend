@@ -10,11 +10,6 @@ const register  = asyncHandler(async(req,res) => {
     try {        
         const {email,firstName,lastName,password,country} = await req.body
         
-        const userExisted = await prisma.user.findUnique({
-            where: {
-                email,
-            }
-        })
 
         console.log(userExisted)
         const salt = 10

@@ -1,7 +1,11 @@
-const express = require('express')
-const dotenv = require('dotenv')
-const product_router = require('./routes/productRoutes.js')
-const users_router = require('./routes/userRoute.js')
+const express = require('express');
+const dotenv = require('dotenv');
+const product_router = require('./routes/productRoutes.js');
+const users_router = require('./routes/userRoute.js');
+const { PrismaClient, Prisma } = require('@prisma/client');
+;
+const prisma = new PrismaClient();
+
 
 dotenv.config()
 

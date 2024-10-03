@@ -1,13 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
-
 datasource db {
   provider = "postgresql"
   url = env("POSTGRES_PRISMA_URL") // uses connection pooling
@@ -23,6 +16,14 @@ model User {
   country String
   createdAt DateTime @default(now())
   updateAt DateTime
+  role Role @default(USER)
+}
+
+enum Role {
+  USER
+  ADMIN
+  BLOCK
+  GUESS
 }
 
 model Product{
@@ -31,17 +32,22 @@ model Product{
   description String
   image String
   price BigInt
-  category String[] 
-  country String
-  cart Cart @relation(fields: [cartId],references: [id])
-  cartId String
-  inCart Boolean?
+  category String 
 }
 
 model Cart {
   id String @id @default(cuid())
-  totalItems BigInt
-  sumOfPrice BigInt
-  products Product[]
-  
+  totalItems BigInt @default(0)
+  sumOfPrice BigInt @default(0)
+  products : CartItem[]  
+}
+
+model CartItem {
+  id String @id @default(cuid())
+  label String
+  cartId String 
+  cart Cart @relation(field: [cartId], refrences: [id])
+  image String
+  price BigInt
+  count Int @default(0)
 }

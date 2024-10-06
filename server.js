@@ -1,10 +1,9 @@
 import express from 'express'
-import dotenv from 'dotenv'
+
 
 
 
 // initialization 
-app.use(dotenv.config())
 const app = express()
 
 

@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import authRouter from './routes/auth.js'
+import cors from 'cors'
 
 
 
@@ -11,7 +12,7 @@ const app = express()
 
 // middlewares 
 app.use(express.json())
-
+app.use(cors())
 
 // routes
 app.get('/', (req,res) => {

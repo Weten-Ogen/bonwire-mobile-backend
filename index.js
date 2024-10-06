@@ -1,7 +1,7 @@
 import express from 'express'
-import dotenv from 'dotenv'
-import bodyParser from 'body-parser'
-dotenv.config()
+
+
+
 
 // initialization 
 const app = express()
@@ -9,14 +9,12 @@ const app = express()
 
 // middlewares 
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded())
 
 app.get('/', (req,res) => {
     res.send("hello and welcome to my backend")
 })
 
-const Port = process.env.PORT || 5000
+const Port = 5000
 
 
 // server

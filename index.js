@@ -9,7 +9,7 @@ const app = express()
 
 
 // middlewares 
-
+app.use(express.json())
 
 app.get('/', (req,res) => {
     res.send("hello and welcome to my backend")

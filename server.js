@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 
 
 // initialization 
-dotenv.config()
+app.use(dotenv.config())
 const app = express()
 
 

@@ -1,9 +1,10 @@
 import express from 'express'
-
+import dotenv from 'dotenv'
 
 
 
 // initialization 
+dotenv.config()
 const app = express()
 
 

@@ -22,7 +22,7 @@ app.get('/', (req,res) => {
 app.use('/auth', authRouter)
 
 
-const Port = 5000
+const Port = process.env.PORT || 5000
 
 
 // server

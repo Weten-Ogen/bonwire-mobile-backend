@@ -1,4 +1,4 @@
-const {verifyToken,verifyRefreshToken, generateToken } =  require('./lib/jwt.js')
+const {verifyToken,verifyRefreshToken,generateToken } =  require('./lib/jwt.js')
 
  const authMiddleware = (req, res, next) => {
   const { token, refreshToken } = req.cookies;
@@ -45,4 +45,4 @@ const {verifyToken,verifyRefreshToken, generateToken } =  require('./lib/jwt.js'
   next();
 };
 
-module.exports = {authMiddleware};
+module.exports = authMiddleware

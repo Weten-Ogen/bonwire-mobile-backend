@@ -1,6 +1,9 @@
 const express = require('express')
 const { createProduct, deleteProductById, getProduct, getProductById, updateProductById }  = require('../controllers/product.js')
- 
+const authMiddleware=  require('../middleware.js');
+
+app.use(authMiddleware())
+
 // get the router
 const productRouter = express.Router()
 

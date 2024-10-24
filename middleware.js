@@ -28,13 +28,17 @@ const {verifyToken,verifyRefreshToken,generateToken } =  require('./lib/jwt.js')
       username: verifiedRefreshToken.username
     });
     
-    
-    res.cookie('token', newToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV !== 'development',
-      sameSite: 'strict',
-      maxAge: 15 * 60 * 1000 // 15 minutes
-    });
+    try {
+      
+      res.cookie('token', newToken, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV !== 'development',
+        sameSite: 'strict',
+        maxAge: 15 * 60 * 1000 // 15 minutes
+      });
+    } catch (error) {
+      res.json({message: 'no cookies found'})
+    }
 
     // Attach the newly generated access token to the request object
     req.user = verifiedRefreshToken;

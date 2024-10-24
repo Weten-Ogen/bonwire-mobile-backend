@@ -3,9 +3,9 @@ const dotenv = require('dotenv')
 const authRouter= require('./routes/auth.js')
 const cors  = require('cors')
 const productRouter=require('./routes/product.js')
-const cookieParser= require('cookie-parser')
+// const cookieParser= require('cookie-parser')
 const path =  require('path')
-const session = require("express-session")
+// const session = require("express-session")
 
 
 

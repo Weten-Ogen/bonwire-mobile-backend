@@ -6,7 +6,7 @@ const productRouter=require('./routes/product.js')
 const cookieParser= require('cookie-parser')
 const path =  require('path')
 const session = require("express-session")
-const {authMiddleware} = require('./middleware.js');
+
 
 
 // initialization 
@@ -32,7 +32,7 @@ app.get('/', (req,res) => {
 })
 
 app.use('/auth',authRouter)
-app.use('/products',authMiddleware,productRouter)
+app.use('/products',productRouter)
 
 
 const Port = process.env.PORT || 5000

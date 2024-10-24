@@ -28,7 +28,7 @@ const {verifyToken,verifyRefreshToken,generateToken } =  require('./lib/jwt.js')
       username: verifiedRefreshToken.username
     });
     
-    try {
+
       
       res.cookie('token', newToken, {
         httpOnly: true,
@@ -36,9 +36,7 @@ const {verifyToken,verifyRefreshToken,generateToken } =  require('./lib/jwt.js')
         sameSite: 'strict',
         maxAge: 15 * 60 * 1000 // 15 minutes
       });
-    } catch (error) {
-      res.json({message: 'no cookies found'})
-    }
+    
 
     // Attach the newly generated access token to the request object
     req.user = verifiedRefreshToken;

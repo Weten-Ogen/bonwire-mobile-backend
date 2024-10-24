@@ -4,8 +4,8 @@ const authRouter= require('./routes/auth.js')
 const cors  = require('cors')
 const productRouter=require('./routes/product.js')
 const session = require("express-session")
-const authMiddleware = require('./middleware.js');
-const path= require('path')
+ const authMiddleware = require('./middleware.js');
+
 
 // initialization 
 dotenv.config()
@@ -27,11 +27,11 @@ app.use(session({
 
 // routes
 app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, 'public','index.html'))
+    res.send("hello world")
 })
 
 app.use('/auth',authRouter)
-app.use('/products',productRouter)
+app.use('/products',authMiddleware,productRouter)
 
 
 const Port = process.env.PORT 

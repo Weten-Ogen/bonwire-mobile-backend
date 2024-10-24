@@ -1,11 +1,16 @@
-import express from 'express'
-import { register } from '../controllers/auth.js'
+const express = require('express')
+const { deleteUser, login, register, logout,resetPass } = require('../controllers/auth.js')
  
 // get the router
 const authRouter = express.Router()
 
-authRouter.get('/',register)
+authRouter.post('/register',register)
+authRouter.post('/login', login)
+authRouter.post('/logout',logout)
+authRouter.put('/reset', resetPass)
+
+authRouter.delete('/delete/:id', deleteUser)
 
 
 
-export default authRouter
+module.exports =  authRouter

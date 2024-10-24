@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("POSTGRES_PRISMA_URL")
 }
 
 enum Role {
@@ -22,18 +22,20 @@ model User {
   image     String?
   country   String
   role      Role    @default(USER)
-  cart      Cart?   @relation(fields: [cartId], references: [id])
+  cart      Cart?   @relation(fields: [cartId], references: [id],onDelete: Cascade)
   cartId    String? @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Cart {
-  id       String    @id @default(cuid())
-  user     User?  @relation
-  items    CartItem[] 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        String     @id @default(cuid())
+  user      User?  
+  items     CartItem[] 
+  totalItem Int        @default(0)
+  sumPrices Float      @default(0)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
 }
 
 
@@ -50,9 +52,9 @@ model CartItem {
 
 model Product {
   id      String  @id  @default(cuid())  
-  label       String
+  label       String @unique
   imageUrl    String
   price       Float
-  description String
+  description String  
   cartItems   CartItem[] 
 }

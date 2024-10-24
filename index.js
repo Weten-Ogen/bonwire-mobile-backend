@@ -3,7 +3,6 @@ const dotenv = require('dotenv')
 const authRouter= require('./routes/auth.js')
 const cors  = require('cors')
 const productRouter=require('./routes/product.js')
-const path =  require('path')
 const session = require("express-session")
 // const authMiddleware = require('./middleware.js');
 

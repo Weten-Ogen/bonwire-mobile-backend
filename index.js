@@ -4,7 +4,7 @@ const authRouter= require('./routes/auth.js')
 const cors  = require('cors')
 const productRouter=require('./routes/product.js')
 const session = require("express-session")
- const authMiddleware = require('./middleware.js');
+const cookieParser = require('cookie-parser')
 
 
 // initialization 
@@ -15,8 +15,7 @@ const app = express()
 // middlewares 
 app.use(express.json())
 app.use(cors())
-
-
+app.use(CookieParser())
 app.use(session({
     secret: process.env.SECRET_KEY ,
     resave: false,
@@ -31,7 +30,7 @@ app.get('/', (req,res) => {
 })
 
 app.use('/auth',authRouter)
-app.use('/products',authMiddleware,productRouter)
+app.use('/products',productRouter)
 
 
 const Port = process.env.PORT 

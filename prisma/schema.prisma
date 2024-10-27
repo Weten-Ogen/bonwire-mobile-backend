@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client-js"
-   binaryTargets = ["native","rhel-openssl-3.0.x"]
+  output = "./generated/client"
   
 }
 
@@ -26,10 +26,22 @@ model User {
   role      Role    @default(USER)
   cart      Cart?   @relation(fields: [cartId], references: [id],onDelete: Cascade)
   cartId    String? @unique
+  session   Session?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
 }
 
+model Session {
+  id String @id @default(cuid())
+  token String @unique
+  userId String @unique
+  user  User @relation(fields: [userId],references: [id],onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@index([token])
+}
 model Cart {
   id        String     @id @default(cuid())
   user      User?  
@@ -57,6 +69,7 @@ model Product {
   label       String @unique
   imageUrl    String
   price       Float
-  description String  
+  description String 
+  tag         String 
   cartItems   CartItem[] 
 }

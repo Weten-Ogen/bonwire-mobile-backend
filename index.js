@@ -15,9 +15,15 @@ const app = express()
 // middlewares 
 app.use(cookieParser())
 app.use(express.json())
-app.use(cors())
+
+app.use(cors({
+    credentials: true,
+    origin: "http://localhost:3000"
+}))
+
 app.use(session({
-    secret: process.env.SECRET_KEY ,
+    
+    secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: true,
     cookie: {secure:true}  

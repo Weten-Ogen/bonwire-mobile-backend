@@ -8,7 +8,6 @@ const cookieParser = require('cookie-parser');
 // initialization 
 dotenv.config()
 const app = express()
-app.use(cookieParser())
 
 app.use(express.json())
 
@@ -22,7 +21,7 @@ app.use('/auth',authRouter)
 app.use('/products',productRouter)
 
 
-const PORT = process.env.PORT 
+const PORT = process.env.PORT || 3000
 
   
 app.listen(PORT, () => {

@@ -66,8 +66,7 @@ const  getProductById = asyncHandler(async(req,res) => {
 
 
   const updateProductById = asyncHandler(async (req,res) => {
-    const {id} = await req.params
-    
+    const {id} = await req.params  
     try {
       
     } catch (error) {
@@ -75,11 +74,19 @@ const  getProductById = asyncHandler(async(req,res) => {
     }  
   })
 
-
+const addManyProducts = asyncHandler(async (req,res) => {
+    const body = await req.body
+    try {
+      return res.json({message: "added all products",data:body})
+    } catch (error) {
+      return res.json({message: "could not add Products",error:error})
+    }
+})
 module.exports =  {
     updateProductById,
     getProduct,
     createProduct,
     getProductById,
     deleteProductById,
+    addManyProducts,
 }

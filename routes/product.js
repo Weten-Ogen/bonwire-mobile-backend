@@ -1,5 +1,5 @@
 const express = require('express')
-const { createProduct, deleteProductById, getProduct, getProductById, updateProductById }  = require('../controllers/product.js')
+const { createProduct, deleteProductById, getProduct, getProductById, updateProductById, addManyProducts }  = require('../controllers/product.js')
 const authMiddleware = require('../middleware.js')
 
 const app = express()
@@ -9,8 +9,9 @@ const app = express()
 const productRouter = express.Router()
 
 productRouter.get("/all",getProduct )
-productRouter.post('/create',authMiddleware,createProduct)
 productRouter.get('/product/:id',authMiddleware,getProductById)
+productRouter.post('/create',authMiddleware,createProduct)
+productRouter.post('/addProducts',authMiddleware,addManyProducts)
 productRouter.put('/update/:id',authMiddleware,updateProductById)
 productRouter.delete('/delete/:id',authMiddleware,deleteProductById)
 

@@ -32,9 +32,6 @@ const register  = asyncHandler(async(req,res) => {
 
             console.log(newUser)
             return res.status(201).json({data:newUser })
-        // Create JWT token
-        const JWT_SECRET = process.env.SECRET_KEY
-        const token = jwt.sign({userId: newUser.id},JWT_SECRET,{expiresIn: '1hr'})
         
     
         } catch (error) {
@@ -74,8 +71,6 @@ const login = asyncHandler(async(req,res) => {
                     maxAge: 15  * 60 *1000
                 })
 
-                // add the new user to the session
-                req.session.user = user
 
                 res.status(200).json({
                     message: "Login  Successfully"

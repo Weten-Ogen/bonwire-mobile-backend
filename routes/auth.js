@@ -1,6 +1,7 @@
 const express = require('express')
 const { deleteUser, login, register, logout,resetPass } = require('../controllers/auth.js')
- 
+
+
 // get the router
 const authRouter = express.Router()
 

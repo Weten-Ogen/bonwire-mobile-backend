@@ -1,47 +1,29 @@
-const express = require('express')
-const dotenv = require('dotenv')
-const authRouter= require('./routes/auth.js')
-const cors  = require('cors')
-const productRouter=require('./routes/product.js')
-const session = require("express-session")
-const cookieParser = require('cookie-parser')
+const express = require('express');
+const dotenv = require('dotenv');
+const authRouter= require('./routes/auth.js');
+const productRouter=require('./routes/product.js');
+const cookieParser = require('cookie-parser');
 
 
 // initialization 
 dotenv.config()
 const app = express()
+app.use(cookieParser())
 
-
-// middlewares 
-// app.use(cookieParser())
 app.use(express.json())
 
-// app.use(cors({
-//     credentials: true,
-//     origin: "http://localhost:5000"
-// }))
 
-// app.use(session({
-    
-//     secret: process.env.SECRET_KEY,
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: {secure:true}  
-// }))
 
-// routes
-app.get('/', (req,res) => {
-    res.send("hello world")
+app.get('/'(req,res) => {
+  res.send("welcome to the beta of bonewire backend")
 })
-
 app.use('/auth',authRouter)
 app.use('/products',productRouter)
 
 
-const Port = process.env.PORT 
+const PORT = process.env.PORT 
 
 
-// server
-app.listen(Port,() => {
-    console.log(`Your app is running on port: ${Port}`)
-} )
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });

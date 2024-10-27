@@ -17,15 +17,13 @@ const {verifyToken,verifyRefreshToken,generateToken } =  require('./lib/jwt.js')
     if (!verifiedRefreshToken) {
       return res.status(401).json({ message: 'Unauthorized, refresh token invalid' });
     }
-    if(!req.session.user) {
-      return res.status(401).json({message: "Unauthorized: Session expired."})
-    }
+   
     
     
     // Generate a new access token using the verified refresh token
     const newToken = generateToken({
       userId: verifiedRefreshToken.userId,
-      username: verifiedRefreshToken.username
+      email: verifiedRefreshToken.email
     });
     
 

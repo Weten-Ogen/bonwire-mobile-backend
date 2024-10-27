@@ -13,21 +13,21 @@ const app = express()
 
 
 // middlewares 
-app.use(cookieParser())
+// app.use(cookieParser())
 app.use(express.json())
 
-app.use(cors({
-    credentials: true,
-    origin: "http://localhost:3000"
-}))
+// app.use(cors({
+//     credentials: true,
+//     origin: "http://localhost:5000"
+// }))
 
-app.use(session({
+// app.use(session({
     
-    secret: process.env.SECRET_KEY,
-    resave: false,
-    saveUninitialized: true,
-    cookie: {secure:true}  
-}))
+//     secret: process.env.SECRET_KEY,
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: {secure:true}  
+// }))
 
 // routes
 app.get('/', (req,res) => {

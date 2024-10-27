@@ -24,7 +24,15 @@ app.use('/products',productRouter)
 
 const PORT = process.env.PORT 
 
-
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-  });
+try {
+  
+  app.listen(PORT, () => {
+      console.log(`Server is running on http://localhost:${PORT}`);
+    });
+} catch (error) {
+  if(error) {
+    app.listen(8080, () => {
+      console.log(`Server is running on http://localhost:${8080}`);
+    });
+  }
+}

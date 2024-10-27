@@ -4,9 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "prisma:generate": "prisma generate --schema=./prisma/schema.prisma --generator client-output --output=/tmp/prisma",
-    "vercel-build": "npm run prisma:generate && npm run build",
-    "start": "node index.js"
+    "start": "node index.js",
+    "vercel-build": "npx prisma generate && npm run build"
   },
   "keywords": [],
   "author": "",

@@ -14,7 +14,7 @@ app.use(express.json())
 
 
 
-app.get('/'(req,res) => {
+app.get('/',(req,res) => {
   res.send("welcome to the beta of bonewire backend")
 })
 app.use('/auth',authRouter)

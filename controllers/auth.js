@@ -1,7 +1,8 @@
-const prisma  = require('../lib/util.js')
+const prisma = require('../lib/util.js')
 const jwt  = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const  asyncHandler =  require('express-async-handler')
+
 
 
 const logout =  asyncHandler(async(req,res) => {
@@ -14,10 +15,12 @@ const logout =  asyncHandler(async(req,res) => {
         res.status(200).json({message: 'Logout successfully'})
     })
 })
+
+
 const register  = asyncHandler(async(req,res) => {
     const {email,firstName,lastName,country,password} = await req.body
-    const existingUser = await prisma.user.findUnique({
-        where:{
+    const existingUser =await prisma.user.findUnique({
+        where: {
             email
         }
     })
@@ -30,7 +33,6 @@ const register  = asyncHandler(async(req,res) => {
                 email,firstName,lastName,country, password:hashPassword
             }})
 
-            console.log(newUser)
             return res.status(201).json({data:newUser })
         
     
@@ -53,36 +55,32 @@ const  updateUser = asyncHandler((async(req,res) => {
 }))
 const login = asyncHandler(async(req,res) => {
     const {email, password} = await req.body
+    const userexists = await prisma.user.findUnique({
+        where:{
+            email
+        }
+    })
+ 
     try {
-        const user = await prisma.user.findFirst({
-            where:{
-                email
-            }
-        })
-        if(!user){
-            return res.status(409).json({message:"user does not exist"})
-        }else{
-            const comparePass =await  bcrypt.compare(password, user.password)
+            const comparePass =await  bcrypt.compare(password, userexists.password)
             if(comparePass){
-                const token = generateToken(user);
+                const token = await generateToken(userexists);
                 res.cookie('token', token , {
-                    httpOnly: true,
+                    httpOnly: false,
                     sameSite: 'strict',
                     maxAge: 15  * 60 *1000
                 })
-
-
                 res.status(200).json({
                     message: "Login  Successfully"
                 })
-            }else{
-                res.status(409).json({message: "Wrong Password"})
             }
-        }    
+            else{
+                 res.status(409).json({message: "Wrong Password"})
+            }
+           
     } catch (error) {
         res.status(500).json({message: "Access Denied!, User does not exist . "})
     }
-    
 })
 
 const resetPass = (asyncHandler(async(req,res) => {

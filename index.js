@@ -3,12 +3,14 @@ const dotenv = require('dotenv');
 const authRouter= require('./routes/auth.js');
 const productRouter=require('./routes/product.js');
 const cookieParser = require('cookie-parser');
-
+const cors = require('cors')
 
 // initialization 
 dotenv.config()
 const app = express()
-
+app.use(cors({
+  credentials:true
+}))
 app.use(express.json())
 
 

@@ -5,14 +5,15 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "postinstall": "prisma generate",
-    "vercel-build": "npm run build"
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@neondatabase/serverless": "^0.9.5",
+    "@prisma/adapter-neon": "^5.21.1",
     "@prisma/client": "^5.21.1",
     "bcryptjs": "^2.4.3",
     "bonwire-mobile-backend": "file:",

@@ -1,5 +1,5 @@
 const asyncHandler =  require('express-async-handler')
-const prisma = require('../lib/util.js')
+const prisma = require('../lib/prisma.js')
 
 const createCart = asyncHandler(async(req,res) => {
 

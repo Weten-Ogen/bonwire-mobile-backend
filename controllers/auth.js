@@ -1,4 +1,4 @@
-const prisma = require('../lib/util.js')
+const prisma = require('../lib/prisma.js')
 const jwt  = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const  asyncHandler =  require('express-async-handler')
@@ -48,7 +48,7 @@ const register  = asyncHandler(async(req,res) => {
 const  updateUser = asyncHandler((async(req,res) => {
     
     try {
-        
+    
     } catch (error) {
         
     }

@@ -3,13 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npm  run prisma:generate&& npm run prisma:migrate && npm run prisma:migrate:deploy && npm run build",
-    "prisma:generate": "npx prisma generate",
     "dev": "nodemon index.js",
-    "prisma:migrate": "npx prisma migrate dev",
-    "prisma:migrate:deploy": "npx prisma migrate deploy",
     "start": "node index.js",
-    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "",

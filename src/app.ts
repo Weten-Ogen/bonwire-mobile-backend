@@ -20,7 +20,7 @@ app.use(express.urlencoded({
     extended: true
 }))
 
-app.get('/' , (req:Request,res:Response) => {
+app.get("/" , (req:Request,res:Response) => {
     res.send({
         message:"bonewire background application"
     })

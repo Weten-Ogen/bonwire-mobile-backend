@@ -7,7 +7,7 @@ import config from '../../config';
 import { jwtHelpers } from '../../lib/jwtHelpers';
 
 
-const auth = (...roles:string[]) => {
+const authMiddleware = (...roles:string[]) => {
     return async (
         req: Request & {user? : any},
         res: Response,
@@ -31,4 +31,4 @@ const auth = (...roles:string[]) => {
     }
 }
 
-export default auth;
+export default authMiddleware;

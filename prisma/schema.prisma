@@ -59,6 +59,8 @@ model Product {
   description String 
   tag         String 
   cartItems   CartItem[] 
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 enum UserStatus {

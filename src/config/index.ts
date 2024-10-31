@@ -12,6 +12,6 @@ export default {
         jwt_secret: process.env.JWT_SECRET,
         expires_in: process.env.EXPIRE_IN,
         refresh_token_secret: process.env.REFRESH_TOKEN_SECRET,
-         
+        refresh_toten_expires_in:process.env.REFRESH_TOKEN_EXPIRES_IN,
     }
 }

@@ -16,7 +16,7 @@ const ApiError_1 = __importDefault(require("../error/ApiError"));
 const http_status_1 = __importDefault(require("http-status"));
 const config_1 = __importDefault(require("../../config"));
 const jwtHelpers_1 = require("../../lib/jwtHelpers");
-const auth = (...roles) => {
+const authMiddleware = (...roles) => {
     return (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
         try {
             const token = req.headers.authorization;
@@ -35,4 +35,4 @@ const auth = (...roles) => {
         }
     });
 };
-exports.default = auth;
+exports.default = authMiddleware;

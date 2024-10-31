@@ -6,17 +6,17 @@ import { ProductController } from './controller.product';
 
 const router = express.Router()
 
-router.get("/", authMiddleware(UserRole.ADMIN,UserRole.USER),ProductController.getProducts)
+router.get("/",ProductController.getProducts)
 
-router.get("/:id", authMiddleware(UserRole.ADMIN,UserRole.USER),ProductController.getProductById)
+router.get("/:id",ProductController.getProductById)
 
-router.post("/create", authMiddleware(UserRole.ADMIN,UserRole.USER),ProductController.createProduct)
+router.post("/create",ProductController.createProduct)
 
-router.post("/createMany",authMiddleware(UserRole.ADMIN),ProductController.createProducts)
+router.post("/createMany",ProductController.createProducts)
 
-router.put("/update/:id", authMiddleware(UserRole.ADMIN),ProductController.updateProductById)
+router.put("/update/:id",ProductController.updateProductById)
 
-router.delete("/delete/:id",authMiddleware(UserRole.ADMIN),ProductController.deleteProductById)
+router.delete("/delete/:id",ProductController.deleteProductById)
 
 
 

@@ -26,7 +26,7 @@ const loginUser = catchAsync(async(req:Request,res:Response) => {
             id:result.id,
             name: result.name,
             email:result.email,
-            acessToken:result.accessToken
+            accessToken:result.accessToken
         }
     })
 })

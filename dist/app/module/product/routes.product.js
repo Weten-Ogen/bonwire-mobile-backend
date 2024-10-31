@@ -15,5 +15,4 @@ router.post("/create", (0, auth_1.default)(client_1.UserRole.ADMIN, client_1.Use
 router.post("/createMany", (0, auth_1.default)(client_1.UserRole.ADMIN), controller_product_1.ProductController.createProducts);
 router.put("/update/:id", (0, auth_1.default)(client_1.UserRole.ADMIN), controller_product_1.ProductController.updateProductById);
 router.delete("/delete/:id", (0, auth_1.default)(client_1.UserRole.ADMIN), controller_product_1.ProductController.deleteProductById);
-router.post("/:");
 exports.ProductRoutes = router;

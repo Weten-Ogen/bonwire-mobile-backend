@@ -8,10 +8,11 @@ import authMiddleware from '../../middleware/auth';
 
 const router = express.Router();
 
-router.post("/login",AuthController.loginUser);
+router.post("/login",
+    AuthController.loginUser
+);
 
-router.post(
-    "/register",
+router.post("/register",
     AuthController.createUser
 );
 

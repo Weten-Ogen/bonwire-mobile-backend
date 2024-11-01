@@ -4,7 +4,7 @@ const sendResponse  = <T>(
     res:Response,
     jsonData: {
      statusCode:number;
-     sucess:boolean;
+     success:boolean;
      message:string;
      meta?:{
         page:number;
@@ -15,7 +15,7 @@ const sendResponse  = <T>(
     }
     ) => {
         res.status(jsonData.statusCode).json({
-            sucess:jsonData.sucess,
+            success:jsonData.success,
             statusCode:jsonData.statusCode,
             message:jsonData.message,
             meta:jsonData.meta || null || undefined,

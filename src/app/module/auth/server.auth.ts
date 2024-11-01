@@ -34,21 +34,26 @@ const createUser = async(data:any) => {
     return createUser
 }
 
+
+
 const loginUser = async(payload:{email:string, password:string}) => {
     const userData = await prisma.user.findUniqueOrThrow({
         where:{
             email: payload.email,
             status: UserStatus.ACTIVE
-        }
+        },
     })
-
-    const isCorrectPassword : boolean = await bcrypt.compare(     payload.password,
-         userData.password
-        )
+    
+    const isCorrectPassword:boolean = await bcrypt.compare(
+        payload.password,
+        userData.password
+    )
+    
     if(!isCorrectPassword){
         throw new Error("Password incorrect!");
     }
-    const accessToken = jwtHelpers.generateToken(
+
+    const accessToken = await jwtHelpers.generateToken(
         {
             id:userData.id,
             name:userData.name,
@@ -71,5 +76,5 @@ const loginUser = async(payload:{email:string, password:string}) => {
 
 export const AuthService = {
     createUser,
-    loginUser
+    loginUser,
 }

@@ -12,7 +12,7 @@ const createProduct = (async(req:Request,res:Response)=>{
  const result = await ProductService.createProduct(req.body);
  sendResponse(res,{
     statusCode: httpStatus.CREATED,
-    sucess:true,
+    success:true,
     message:"Product created successfully",
     data:result
  })
@@ -23,7 +23,7 @@ const getProducts= catchAsync(async(req:Request,res:Response) =>{
     const result = await ProductService.getProducts(id)
     sendResponse(res, {
         statusCode: httpStatus.CREATED,
-        sucess:true,
+        success:true,
         message:"Fetched all products ",
         data: result
     })
@@ -34,7 +34,7 @@ const getProductById = catchAsync(async(req:Request,res:Response) =>{
     const result = await ProductService.getProductById(id)
     sendResponse(res , {
         statusCode: httpStatus.CREATED,
-        sucess: true,
+        success: true,
         message: "fetched product at id",
         data: result
 
@@ -46,7 +46,7 @@ const deleteProductById = catchAsync(async(req:Request,res:Response) => {
     const result = await ProductService.deleteProductById(id)
     sendResponse(res, {
         statusCode: httpStatus.CREATED,
-        sucess: true,
+        success: true,
         message: "deleted product successfully",
         data: result
     })
@@ -62,7 +62,7 @@ const updateProductById = catchAsync(async(req:Request,res:Response) => {
     const result = await ProductService.updateProductById(newreq)
     sendResponse(res, {
         statusCode: httpStatus.CREATED,
-        sucess: true,
+        success: true,
         message: "Updated product successfully",
         data: result
     })
@@ -72,7 +72,7 @@ const createProducts = catchAsync(async(req:Request,res:Response) =>{
     const result = await ProductService.createProducts(req.body)
     sendResponse(res, {
         statusCode: httpStatus.CREATED,
-        sucess: true,
+        success: true,
         message: "Created products successfully",
         data: result
     })

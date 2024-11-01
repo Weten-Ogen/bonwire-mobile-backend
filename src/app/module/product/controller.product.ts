@@ -67,7 +67,7 @@ const updateProductById = catchAsync(async(req:Request,res:Response) => {
 })
 
 const createProducts = catchAsync(async(req:Request,res:Response) =>{
-    const result = await ProductService.createProducts(req.body)
+    const result = await ProductService.createProducts(req.body.data)
     sendResponse(res, {
         statusCode: httpStatus.CREATED,
         success: true,

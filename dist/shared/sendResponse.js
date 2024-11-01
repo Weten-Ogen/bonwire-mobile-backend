@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const sendResponse = (res, jsonData) => {
     res.status(jsonData.statusCode).json({
-        sucess: jsonData.sucess,
+        success: jsonData.success,
         statusCode: jsonData.statusCode,
         message: jsonData.message,
         meta: jsonData.meta || null || undefined,

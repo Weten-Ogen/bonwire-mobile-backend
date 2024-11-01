@@ -72,13 +72,13 @@ const loginUser = (payload) => __awaiter(void 0, void 0, void 0, function* () {
         where: {
             email: payload.email,
             status: client_1.UserStatus.ACTIVE
-        }
+        },
     });
     const isCorrectPassword = yield bcrypt.compare(payload.password, userData.password);
     if (!isCorrectPassword) {
         throw new Error("Password incorrect!");
     }
-    const accessToken = jwtHelpers_1.jwtHelpers.generateToken({
+    const accessToken = yield jwtHelpers_1.jwtHelpers.generateToken({
         id: userData.id,
         name: userData.name,
         email: userData.email,
@@ -89,11 +89,11 @@ const loginUser = (payload) => __awaiter(void 0, void 0, void 0, function* () {
         name: userData.name,
         email: userData.email,
         role: userData.role,
-        accessToken
+        accessToken,
     };
     return result;
 });
 exports.AuthService = {
     createUser,
-    loginUser
+    loginUser,
 };

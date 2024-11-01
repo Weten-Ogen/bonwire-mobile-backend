@@ -21,7 +21,7 @@ const createProduct = ((req, res) => __awaiter(void 0, void 0, void 0, function*
     const result = yield service_product_1.ProductService.createProduct(req.body);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
-        sucess: true,
+        success: true,
         message: "Product created successfully",
         data: result
     });
@@ -31,7 +31,7 @@ const getProducts = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, vo
     const result = yield service_product_1.ProductService.getProducts(id);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
-        sucess: true,
+        success: true,
         message: "Fetched all products ",
         data: result
     });
@@ -41,7 +41,7 @@ const getProductById = (0, catchAsync_1.default)((req, res) => __awaiter(void 0,
     const result = yield service_product_1.ProductService.getProductById(id);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
-        sucess: true,
+        success: true,
         message: "fetched product at id",
         data: result
     });
@@ -51,7 +51,7 @@ const deleteProductById = (0, catchAsync_1.default)((req, res) => __awaiter(void
     const result = yield service_product_1.ProductService.deleteProductById(id);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
-        sucess: true,
+        success: true,
         message: "deleted product successfully",
         data: result
     });
@@ -66,7 +66,7 @@ const updateProductById = (0, catchAsync_1.default)((req, res) => __awaiter(void
     const result = yield service_product_1.ProductService.updateProductById(newreq);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
-        sucess: true,
+        success: true,
         message: "Updated product successfully",
         data: result
     });
@@ -75,7 +75,7 @@ const createProducts = (0, catchAsync_1.default)((req, res) => __awaiter(void 0,
     const result = yield service_product_1.ProductService.createProducts(req.body);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
-        sucess: true,
+        success: true,
         message: "Created products successfully",
         data: result
     });

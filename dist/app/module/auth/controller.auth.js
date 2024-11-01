@@ -21,7 +21,7 @@ const createUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, voi
     const result = yield server_auth_1.AuthService.createUser(req.body);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
-        sucess: true,
+        success: true,
         message: 'User Created successfully',
         data: result
     });
@@ -30,13 +30,14 @@ const loginUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void
     const result = yield server_auth_1.AuthService.loginUser(req.body);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
-        sucess: true,
-        message: "User logged in sucessfully",
+        success: true,
+        message: "User logged in successfully",
         data: {
             id: result.id,
             name: result.name,
             email: result.email,
-            acessToken: result.accessToken
+            role: result.role,
+            accessToken: result.accessToken
         }
     });
 }));

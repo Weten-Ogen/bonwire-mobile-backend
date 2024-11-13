@@ -72,7 +72,7 @@ const createProducts = catchAsync(async(req:Request,res:Response) =>{
         statusCode: httpStatus.CREATED,
         success: true,
         message: "Created products successfully",
-        data: result
+        data:result
     })
 })
 

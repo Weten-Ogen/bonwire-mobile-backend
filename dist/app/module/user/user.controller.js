@@ -25,6 +25,7 @@ const getUserById = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, vo
         success: true,
         message: "got user by id successfully",
         data: {
+            name: user === null || user === void 0 ? void 0 : user.name,
             id: user === null || user === void 0 ? void 0 : user.id,
             email: user === null || user === void 0 ? void 0 : user.email,
             contact: user === null || user === void 0 ? void 0 : user.contactNumber,

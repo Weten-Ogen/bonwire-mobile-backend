@@ -15,6 +15,7 @@ const getUserById = catchAsync(async(req:Request, res:Response) => {
         success:true,
         message: "got user by id successfully",
         data:{
+            name:user?.name,
             id:user?.id,
             email:user?.email,
             contact:user?.contactNumber,

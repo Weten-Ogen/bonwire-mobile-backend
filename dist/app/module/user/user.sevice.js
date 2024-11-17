@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserService = void 0;
 const prisma_1 = __importDefault(require("../../../shared/prisma"));
 const getuserbyId = (data) => __awaiter(void 0, void 0, void 0, function* () {
-    const user = yield prisma_1.default.user.findUnique({
+    const user = yield prisma_1.default.user.findFirst({
         where: {
             id: data.id
         }

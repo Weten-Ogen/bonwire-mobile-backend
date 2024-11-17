@@ -17,7 +17,7 @@ const prisma_1 = __importDefault(require("../../../shared/prisma"));
 const getuserbyId = (data) => __awaiter(void 0, void 0, void 0, function* () {
     const user = yield prisma_1.default.user.findUnique({
         where: {
-            id: data
+            id: data.id
         }
     });
     return user;

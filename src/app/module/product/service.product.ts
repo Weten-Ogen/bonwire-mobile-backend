@@ -21,8 +21,7 @@ const getProducts= (async() =>{
     return getProducts
 })
 
-const getProductById = (async(data:any) =>{
-    
+const getProductById = (async(data:any) =>{    
     const product = await prisma.product.findFirst({
         where: {
             id: data.id

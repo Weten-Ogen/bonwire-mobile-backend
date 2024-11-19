@@ -29,12 +29,8 @@ const getProducts = ((data) => __awaiter(void 0, void 0, void 0, function* () {
     return getProducts;
 }));
 const getProductById = ((data) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield prisma_1.default.product.findUnique({
-        where: {
-            id: data.req.params.id
-        }
-    });
-    return result;
+    const id = data.req;
+    console.log(id);
 }));
 const deleteProductById = ((data) => __awaiter(void 0, void 0, void 0, function* () {
     yield prisma_1.default.product.delete({

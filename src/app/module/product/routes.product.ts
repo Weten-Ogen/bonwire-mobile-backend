@@ -1,6 +1,4 @@
 import express from 'express';
-import authMiddleware from '../../middleware/auth';
-import { UserRole } from '@prisma/client';
 import { ProductController } from './controller.product';
 
 

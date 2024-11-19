@@ -37,7 +37,7 @@ const getProducts = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, vo
     });
 }));
 const getProductById = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { id } = yield req.params;
+    const { id } = req.params;
     const result = yield service_product_1.ProductService.getProductById(id);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,

@@ -28,8 +28,8 @@ const getProducts= catchAsync(async(req:Request,res:Response) =>{
 })
 
 const getProductById = catchAsync(async(req:Request,res:Response) =>{
-  
-    const result = await ProductService.getProductById(req)
+    const {id}  = req.params
+    const result = await ProductService.getProductById(id)
     sendResponse(res , {
         statusCode: httpStatus.CREATED,
         success: true,

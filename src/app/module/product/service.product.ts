@@ -22,10 +22,12 @@ const getProducts= (async(data:any) =>{
 })
 
 const getProductById = (async(data:any) =>{
-    const id = data.req
-    console.log(id)
-    
-
+    const product = await prisma.product.findFirst({
+        where: {
+            id: data.id
+        }
+    })
+    return product
 })
 
 const deleteProductById = (async(data:any) => {

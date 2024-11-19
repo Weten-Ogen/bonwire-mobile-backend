@@ -12,7 +12,7 @@ const createProduct = (async(data:any)=>{
     return createProduct
 })
 
-const getProducts= (async(data:any) =>{
+const getProducts= (async() =>{
     const getProducts = await prisma.product.findMany({
         orderBy:{
             createdAt: "desc"
@@ -22,6 +22,7 @@ const getProducts= (async(data:any) =>{
 })
 
 const getProductById = (async(data:any) =>{
+    
     const product = await prisma.product.findFirst({
         where: {
             id: data.id

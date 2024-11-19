@@ -10,11 +10,7 @@ router.get("/:id", ProductController.getProductById)
 
 router.post("/create",ProductController.createProduct)
 
-router.post("/createMany",ProductController.createProducts)
 
-router.put("/update/:id",ProductController.updateProductById)
-
-router.delete("/delete/:id",ProductController.deleteProductById)
 
 
 export const ProductRoutes = router

@@ -27,8 +27,7 @@ const createProduct = ((req, res) => __awaiter(void 0, void 0, void 0, function*
     });
 }));
 const getProducts = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { id } = yield req.params;
-    const result = yield service_product_1.ProductService.getProducts(id);
+    const result = yield service_product_1.ProductService.getProducts();
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
         success: true,
@@ -42,49 +41,12 @@ const getProductById = (0, catchAsync_1.default)((req, res) => __awaiter(void 0,
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
         success: true,
-        message: "fetched product at id",
-        data: result
-    });
-}));
-const deleteProductById = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { id } = yield req.params;
-    const result = yield service_product_1.ProductService.deleteProductById(id);
-    (0, sendResponse_1.default)(res, {
-        statusCode: http_status_1.default.CREATED,
-        success: true,
-        message: "deleted product successfully",
-        data: result
-    });
-}));
-const updateProductById = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { id } = yield req.params;
-    const { body } = yield req.body;
-    const newreq = {
-        body,
-        id
-    };
-    const result = yield service_product_1.ProductService.updateProductById(newreq);
-    (0, sendResponse_1.default)(res, {
-        statusCode: http_status_1.default.CREATED,
-        success: true,
-        message: "Updated product successfully",
-        data: result
-    });
-}));
-const createProducts = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield service_product_1.ProductService.createProducts(req.body.data);
-    (0, sendResponse_1.default)(res, {
-        statusCode: http_status_1.default.CREATED,
-        success: true,
-        message: "Created products successfully",
+        message: `fectched product at id : ${id}`,
         data: result
     });
 }));
 exports.ProductController = {
     createProduct,
-    createProducts,
     getProductById,
-    getProducts,
-    deleteProductById,
-    updateProductById
+    getProducts
 };

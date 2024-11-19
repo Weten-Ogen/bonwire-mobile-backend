@@ -22,21 +22,12 @@ const getProducts= (async(data:any) =>{
 })
 
 const getProductById = (async(data:any) =>{
-    const getProductById = await prisma.product.findFirst({
-        where:{
-            id: data.id
+    const result = await prisma.product.findUnique({
+        where: {
+            id: data.req.params.id
         }
-    })
-    const result = {
-        id: getProductById?.id,
-        label: getProductById?.label,
-        imageUrl: getProductById?.imageUrl,
-        price : getProductById?.price,
-        description: getProductById?.description,
-        tag: getProductById?.tag,
-        createdAt: getProductById?.createdAt,
-        updatedAt: getProductById?.updatedAt
-    }
+    }) 
+   
     return result
 
 })

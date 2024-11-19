@@ -29,21 +29,11 @@ const getProducts = ((data) => __awaiter(void 0, void 0, void 0, function* () {
     return getProducts;
 }));
 const getProductById = ((data) => __awaiter(void 0, void 0, void 0, function* () {
-    const getProductById = yield prisma_1.default.product.findFirst({
+    const result = yield prisma_1.default.product.findUnique({
         where: {
-            id: data.id
+            id: data.req.params.id
         }
     });
-    const result = {
-        id: getProductById === null || getProductById === void 0 ? void 0 : getProductById.id,
-        label: getProductById === null || getProductById === void 0 ? void 0 : getProductById.label,
-        imageUrl: getProductById === null || getProductById === void 0 ? void 0 : getProductById.imageUrl,
-        price: getProductById === null || getProductById === void 0 ? void 0 : getProductById.price,
-        description: getProductById === null || getProductById === void 0 ? void 0 : getProductById.description,
-        tag: getProductById === null || getProductById === void 0 ? void 0 : getProductById.tag,
-        createdAt: getProductById === null || getProductById === void 0 ? void 0 : getProductById.createdAt,
-        updatedAt: getProductById === null || getProductById === void 0 ? void 0 : getProductById.updatedAt
-    };
     return result;
 }));
 const deleteProductById = ((data) => __awaiter(void 0, void 0, void 0, function* () {

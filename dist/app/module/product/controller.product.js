@@ -45,8 +45,19 @@ const getProductById = (0, catchAsync_1.default)((req, res) => __awaiter(void 0,
         data: result
     });
 }));
+const getProductByFilter = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { filter } = yield req.body;
+    const filteredprods = yield service_product_1.ProductService.getProductsbyFilter(filter);
+    (0, sendResponse_1.default)(res, {
+        statusCode: http_status_1.default.CREATED,
+        success: true,
+        message: "got product by filter",
+        data: filteredprods
+    });
+}));
 exports.ProductController = {
     createProduct,
     getProductById,
-    getProducts
+    getProducts,
+    getProductByFilter
 };

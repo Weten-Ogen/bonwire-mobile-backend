@@ -68,6 +68,14 @@ const createProducts = (async(data:any) =>{
 })
 
 
+const getProductsbyFilter = (async(data:string) => {
+    const result = await prisma.product.findMany({where: {
+        tag: data
+    }})
+
+    return result
+})
+
 
 
 export const ProductService = {
@@ -76,5 +84,6 @@ export const ProductService = {
     getProducts,
     deleteProductById,
     updateProductById,
-    createProducts
+    createProducts,
+    getProductsbyFilter
 }

@@ -8,7 +8,7 @@ router.get("/",ProductController.getProducts)
 
 router.get("/:id", ProductController.getProductById)
 
-router.get('/filter',ProductController.getProductByFilter)
+router.get('/filter/filter',ProductController.getProductByFilter)
 
 router.post("/create",ProductController.createProduct)
 

@@ -70,7 +70,7 @@ const createProducts = ((data) => __awaiter(void 0, void 0, void 0, function* ()
 }));
 const getProductsbyFilter = ((data) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield prisma_1.default.product.findMany({ where: {
-            tag: data.req.body.filter
+            tag: data.filter
         } });
     return result;
 }));

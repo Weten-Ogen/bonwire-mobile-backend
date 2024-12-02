@@ -46,7 +46,8 @@ const getProductById = (0, catchAsync_1.default)((req, res) => __awaiter(void 0,
     });
 }));
 const getProductByFilter = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const filteredprods = yield service_product_1.ProductService.getProductsbyFilter(req.body);
+    const filter = req.params;
+    const filteredprods = yield service_product_1.ProductService.getProductsbyFilter(filter);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.CREATED,
         success: true,

@@ -40,8 +40,8 @@ const getProductById = catchAsync(async(req:Request,res:Response) =>{
 })
 
 const getProductByFilter = catchAsync(async(req,res) => {
-    
-    const filteredprods = await ProductService.getProductsbyFilter(req.body);
+    const filter = req.params
+    const filteredprods = await ProductService.getProductsbyFilter(filter);
     
     sendResponse(res, {
         statusCode: httpStatus.CREATED,

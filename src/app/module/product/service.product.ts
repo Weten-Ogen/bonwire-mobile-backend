@@ -69,8 +69,9 @@ const createProducts = (async(data:any) =>{
 
 
 const getProductsbyFilter = (async(data:any) => {    
+    const datatag = data.filter.toUpperCase()
     const result = await prisma.product.findMany({where:{
-        tag: data.filter
+        tag:datatag
     }})
 
     return result

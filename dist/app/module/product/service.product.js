@@ -69,8 +69,9 @@ const createProducts = ((data) => __awaiter(void 0, void 0, void 0, function* ()
     return result;
 }));
 const getProductsbyFilter = ((data) => __awaiter(void 0, void 0, void 0, function* () {
+    const datatag = data.filter.toUpperCase();
     const result = yield prisma_1.default.product.findMany({ where: {
-            tag: data.filter
+            tag: datatag
         } });
     return result;
 }));

@@ -69,9 +69,9 @@ const createProducts = (async(data:any) =>{
 
 
 const getProductsbyFilter = (async(data:any) => {
-    const {filter} = await data.req.body
+    
     const result = await prisma.product.findMany({where:{
-        tag: filter
+        tag: data.req.body.filter
     }})
 
     return result

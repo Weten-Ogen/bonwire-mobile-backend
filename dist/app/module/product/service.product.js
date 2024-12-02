@@ -69,9 +69,8 @@ const createProducts = ((data) => __awaiter(void 0, void 0, void 0, function* ()
     return result;
 }));
 const getProductsbyFilter = ((data) => __awaiter(void 0, void 0, void 0, function* () {
-    const { filter } = yield data.req.body;
     const result = yield prisma_1.default.product.findMany({ where: {
-            tag: filter
+            tag: data.req.body.filter
         } });
     return result;
 }));

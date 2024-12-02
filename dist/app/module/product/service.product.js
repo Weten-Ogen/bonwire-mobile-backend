@@ -68,7 +68,8 @@ const createProducts = ((data) => __awaiter(void 0, void 0, void 0, function* ()
     });
     return result;
 }));
-const getProductsbyFilter = ((_a) => __awaiter(void 0, [_a], void 0, function* ({ filter }) {
+const getProductsbyFilter = ((data) => __awaiter(void 0, void 0, void 0, function* () {
+    const { filter } = yield data.req.body;
     const result = yield prisma_1.default.product.findMany({ where: {
             tag: filter
         } });

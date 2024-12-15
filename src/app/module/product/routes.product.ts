@@ -12,7 +12,7 @@ router.get('/filter/:filter',ProductController.getProductByFilter)
 
 router.post("/create",ProductController.createProduct)
 
-
+router.post("/search",ProductController.searchProduct)
 
 
 export const ProductRoutes = router

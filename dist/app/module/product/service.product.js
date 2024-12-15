@@ -69,14 +69,24 @@ const createProducts = ((data) => __awaiter(void 0, void 0, void 0, function* ()
     return result;
 }));
 const getProductsbyFilter = ((data) => __awaiter(void 0, void 0, void 0, function* () {
-    const datatag = data.filter.toUpperCase();
+    const datatag = yield data.filter.toUpperCase();
     const result = yield prisma_1.default.product.findMany({ where: {
             tag: datatag
         } });
     return result;
 }));
+const searchProduct = ((data) => __awaiter(void 0, void 0, void 0, function* () {
+    const query = yield data.query.toLowerCase();
+    const result = yield prisma_1.default.product.findMany({
+        where: {
+            label: query
+        }
+    });
+    return result;
+}));
 exports.ProductService = {
     createProduct,
+    searchProduct,
     getProductById,
     getProducts,
     deleteProductById,

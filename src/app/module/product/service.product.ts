@@ -69,7 +69,7 @@ const createProducts = (async(data:any) =>{
 
 
 const getProductsbyFilter = (async(data:any) => {    
-    const datatag = data.filter.toUpperCase()
+    const datatag =await  data.filter.toUpperCase()
     const result = await prisma.product.findMany({where:{
         tag:datatag
     }})
@@ -77,10 +77,19 @@ const getProductsbyFilter = (async(data:any) => {
     return result
 })
 
-
+const searchProduct  = (async(data:any) => {
+    const query = await data.query.toLowerCase()
+    const result = await prisma.product.findMany({
+        where: {
+            label: query
+        }
+    })
+    return result
+})
 
 export const ProductService = {
     createProduct,
+    searchProduct,
     getProductById,
     getProducts,
     deleteProductById,

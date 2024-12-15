@@ -11,4 +11,5 @@ router.get("/", controller_product_1.ProductController.getProducts);
 router.get("/:id", controller_product_1.ProductController.getProductById);
 router.get('/filter/:filter', controller_product_1.ProductController.getProductByFilter);
 router.post("/create", controller_product_1.ProductController.createProduct);
+router.post("/search", controller_product_1.ProductController.searchProduct);
 exports.ProductRoutes = router;

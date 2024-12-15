@@ -27,6 +27,17 @@ const getProducts= catchAsync(async(req:Request,res:Response) =>{
     })
 })
 
+const searchProduct = catchAsync(async(req:Request,res:Response) => {
+    const {query} = await req.body
+    const result = await ProductService.searchProduct(query)
+    sendResponse(res , {
+        statusCode: httpStatus.CREATED,
+        success: true,
+        message: "fetched the searched query",
+        data: result 
+    })
+})  
+
 const getProductById = catchAsync(async(req:Request,res:Response) =>{
     const id  = req.params;
     const result = await ProductService.getProductById(id);
@@ -55,5 +66,6 @@ export const ProductController = {
     createProduct,
     getProductById,
     getProducts,
-    getProductByFilter
+    getProductByFilter,
+    searchProduct
 }

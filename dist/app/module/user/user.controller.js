@@ -29,7 +29,7 @@ const getUserById = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, vo
             id: user === null || user === void 0 ? void 0 : user.id,
             email: user === null || user === void 0 ? void 0 : user.email,
             contact: user === null || user === void 0 ? void 0 : user.contactNumber,
-            status: user === null || user === void 0 ? void 0 : user.status,
+            role: user === null || user === void 0 ? void 0 : user.role,
             country: user === null || user === void 0 ? void 0 : user.country,
             address: user === null || user === void 0 ? void 0 : user.address,
             createdAt: user === null || user === void 0 ? void 0 : user.createdAt

@@ -19,7 +19,7 @@ const getUserById = catchAsync(async(req:Request, res:Response) => {
             id:user?.id,
             email:user?.email,
             contact:user?.contactNumber,
-            status:user?.status,
+            role:user?.role,
             country:user?.country,
             address:user?.address,
             createdAt:user?.createdAt

@@ -15,7 +15,7 @@ const createProduct = (async(data:any)=>{
 const getProducts= (async() =>{
     const getProducts = await prisma.product.findMany({
         orderBy:{
-            createdAt: "desc"
+            createdAt: "asc"
         }
     })
     return getProducts

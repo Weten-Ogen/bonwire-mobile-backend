@@ -7,8 +7,8 @@ import httpStatus from "http-status";
 
 
 const getUserById = catchAsync(async(req:Request, res:Response) => {
-   
-    const user = await UserService.getuserbyId(req)
+    const {id} = await req.params
+    const user = await UserService.getuserbyId(id)
     
     sendResponse(res , {
         statusCode: httpStatus.OK,

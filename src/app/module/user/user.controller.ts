@@ -14,16 +14,7 @@ const getUserById = catchAsync(async(req:Request, res:Response) => {
         statusCode: httpStatus.OK,
         success:true,
         message: "got user by id successfully",
-        data:{
-            name:user?.name,
-            id:user?.id,
-            email:user?.email,
-            contact:user?.contactNumber,
-            role:user?.role,
-            country:user?.country,
-            address:user?.address,
-            createdAt:user?.createdAt
-        }
+        data: user
     })
 })
 

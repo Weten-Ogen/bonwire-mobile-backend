@@ -5,7 +5,7 @@ import prisma from "../../../shared/prisma";
 const  getuserbyId = async(data:any) =>{
     const user = await prisma.user.findFirst({
         where: {
-            id: data.id
+            id: data.req.id
         }
     }
     )

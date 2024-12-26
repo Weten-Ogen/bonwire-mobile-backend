@@ -14,7 +14,7 @@ const getUserById = catchAsync(async(req:Request, res:Response) => {
         statusCode: httpStatus.OK,
         success:true,
         message: "got user by id successfully",
-        data: user
+        data : user
     })
 })
 

@@ -7,8 +7,8 @@ const  getuserbyId = async(data:any) =>{
         where: {
             id: data.id
         }
-    }
-    )
+    })
+   
     return user
 }
 

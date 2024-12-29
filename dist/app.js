@@ -25,8 +25,9 @@ const io = new socket_io_1.Server(server, {
     }
 });
 // listen for mesage 
-io.on('connection', (socket) => {
+io.on('connect', (socket) => {
     console.log("user connected successfully" + ` ${socket.id}`);
+    // 
 });
 // use 
 app.use(express_1.default.urlencoded({

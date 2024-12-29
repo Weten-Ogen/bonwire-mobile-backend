@@ -29,8 +29,10 @@ const io = new Server(server, {
 })
 
 // listen for mesage 
-io.on('connection', (socket) => {
+io.on('connect', (socket) => {
     console.log("user connected successfully" + ` ${socket.id}`) 
+
+    // 
 })
 
 

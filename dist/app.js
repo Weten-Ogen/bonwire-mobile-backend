@@ -20,7 +20,7 @@ app.use((0, cookie_parser_1.default)());
 // initializing the Socket.io
 const io = new socket_io_1.Server(server, {
     cors: {
-        origin: "*",
+        origin: ["http://localhost:3000", "https://bonewire.shop"],
         methods: ["GET", "POST"]
     }
 });

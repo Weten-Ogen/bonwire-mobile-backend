@@ -21,7 +21,9 @@ app.use((0, cookie_parser_1.default)());
 const io = new socket_io_1.Server(server, {
     cors: {
         origin: "http://locahlhost:3000",
-        methods: ["GET", "POST"]
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+        credentials: true
     }
 });
 // listen for mesage 

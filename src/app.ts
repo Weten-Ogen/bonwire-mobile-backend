@@ -26,7 +26,7 @@ const io = new Server(server, {
         origin:"http://locahlhost:3000",
         methods: ["GET","POST","PUT","DELETE"],
         allowedHeaders:["Content-Type", "Authorization"],
-        credentials:"true"
+        credentials:true
     }
 })
 

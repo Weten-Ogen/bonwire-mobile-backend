@@ -4,15 +4,34 @@ import httpStatus from 'http-status';
 import cookieParser from 'cookie-parser';
 import globalErrorHandler from './app/middleware/globalErrorHandler';
 import router from './app/routes';
+import http from 'http'
+import { Server } from 'socket.io';
 
 
 const app:Application = express();
+
+const server = http.createServer(app)
+
+
 
 app.use(cors())
 
 // parse 
 app.use(express.json())
 app.use(cookieParser())
+
+// initializing the Socket.io
+const io = new Server(server, {
+    cors: {
+        origin: "*",
+        methods: ["GET","POST"]
+    }
+})
+
+// listen for mesage 
+io.on('connection', (socket) => {
+    console.log("user connected successfully" + ` ${socket.id}`) 
+})
 
 
 // use 

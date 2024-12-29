@@ -23,7 +23,7 @@ app.use(cookieParser())
 // initializing the Socket.io
 const io = new Server(server, {
     cors: {
-        origin: ["http://localhost:3000", "https://bonewire.shop"],
+        origin:"http://locahlhost:3000",
         methods: ["GET","POST"]
     }
 })

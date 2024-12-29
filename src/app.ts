@@ -32,7 +32,10 @@ const io = new Server(server, {
 io.on('connect', (socket) => {
     console.log("user connected successfully" + ` ${socket.id}`) 
 
-    // 
+    // receive the message
+    io.on('send-message', (message) => {
+        io.emit('received-message', message)
+    })
 })
 
 

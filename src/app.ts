@@ -29,12 +29,12 @@ const io = new Server(server, {
 })
 
 // listen for mesage 
-io.on('connect', (socket) => {
+io.on('connection', (socket) => {
     console.log("user connected successfully" + ` ${socket.id}`) 
 
     // receive the message
-    io.on('send-message', (message) => {
-        io.emit('received-message', message)
+    io.on('send-message', (socket) => {
+        io.emit('received-message', socket.id)
     })
 })
 

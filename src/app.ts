@@ -24,7 +24,9 @@ app.use(cookieParser())
 const io = new Server(server, {
     cors: {
         origin:"http://locahlhost:3000",
-        methods: ["GET","POST"]
+        methods: ["GET","POST","PUT","DELETE"],
+        allowedHeaders:["Content-Type", "Authorization"],
+        credentials:"true"
     }
 })
 

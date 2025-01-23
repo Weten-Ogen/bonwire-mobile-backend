@@ -10,10 +10,12 @@ export const createChatRoom  = async(data:any) => {
 export const createMessage = async(data:any) => {
     const message = data.message
     const roomId = data.roomId
+    const userId = data.userId
     const newmessage = await prisma.message.create({
         data:{
             text:message,
-            chatroom: roomId
+            chatroom: roomId,
+            sender: userId
         }
     })
 }

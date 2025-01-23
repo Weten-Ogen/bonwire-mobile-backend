@@ -22,10 +22,12 @@ exports.createChatRoom = createChatRoom;
 const createMessage = (data) => __awaiter(void 0, void 0, void 0, function* () {
     const message = data.message;
     const roomId = data.roomId;
+    const userId = data.userId;
     const newmessage = yield prisma_1.default.message.create({
         data: {
             text: message,
-            chatroom: roomId
+            chatroom: roomId,
+            sender: userId
         }
     });
 });

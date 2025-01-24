@@ -6,17 +6,17 @@ import { ChatController } from "./controller.chat"
 
 
 const router = express.Router()
-router.get('chat/getrooms',
+router.get('/getrooms',
     ChatController.getRooms
 )
-router.get('/chat/getmessages',
+router.get('/getmessages',
     ChatController.getMessages
 )
-router.get('/chat/createroom', 
+router.get('/createroom', 
     ChatController.createRoom
 )
 
-router.post('/chat/createmessage',
+router.post('/createmessage',
     ChatController.createMessage
 )
 

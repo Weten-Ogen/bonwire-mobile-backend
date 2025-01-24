@@ -28,7 +28,7 @@ export const getRooms = catchAsync(async(req:Request,res:Response) => {
 
 
 export const createRoom = catchAsync(async(req:Request,res:Response) =>{
-    const result = await ChatService.createChatRoom(req.body)
+    const result = await ChatService.createChatRoom()
     sendResponse(res, {
         statusCode:httpStatus.OK,
         success: true,

@@ -9,6 +9,6 @@ const controller_chat_1 = require("./controller.chat");
 const router = express_1.default.Router();
 router.get('chat/getrooms', controller_chat_1.ChatController.getRooms);
 router.get('/chat/getmessages', controller_chat_1.ChatController.getMessages);
-router.post('/chat/createroom', controller_chat_1.ChatController.createRoom);
+router.get('/chat/createroom', controller_chat_1.ChatController.createRoom);
 router.post('/chat/createmessage', controller_chat_1.ChatController.createMessage);
 exports.ChatRoute = router;

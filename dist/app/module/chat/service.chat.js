@@ -14,9 +14,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ChatService = exports.getRooms = exports.getMessages = exports.createMessage = exports.createChatRoom = void 0;
 const prisma_1 = __importDefault(require("../../../shared/prisma"));
-const createChatRoom = (data) => __awaiter(void 0, void 0, void 0, function* () {
-    const id = data.id;
-    const newroom = yield prisma_1.default.chatRoom.create({ data: {} });
+const createChatRoom = () => __awaiter(void 0, void 0, void 0, function* () {
+    const newroom = yield prisma_1.default.chatRoom.create({
+        data: {}
+    });
+    return newroom.id;
 });
 exports.createChatRoom = createChatRoom;
 const createMessage = (data) => __awaiter(void 0, void 0, void 0, function* () {

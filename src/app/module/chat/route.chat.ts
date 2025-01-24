@@ -12,7 +12,7 @@ router.get('chat/getrooms',
 router.get('/chat/getmessages',
     ChatController.getMessages
 )
-router.post('/chat/createroom', 
+router.get('/chat/createroom', 
     ChatController.createRoom
 )
 

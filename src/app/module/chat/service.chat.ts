@@ -2,7 +2,6 @@ import prisma from "../../../shared/prisma";
 
 export const createChatRoom  = async() => {
     
-    
     const newroom = await prisma.chatRoom.create({
         data: {}
     })
@@ -11,15 +10,12 @@ export const createChatRoom  = async() => {
 
 export const createMessage = async(data:any) => {
     
-    const message = data.message
-    const roomId = data.roomId
-    const userId = data.userId
+    const {message,chatroom} = await data.req.body
 
     const newmessage = await prisma.message.create({
         data:{
             text:message,
-            chatroom: roomId,
-            sender: userId
+            chatroom: chatroom
         }
     })
 }

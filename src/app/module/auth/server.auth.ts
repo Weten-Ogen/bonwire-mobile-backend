@@ -16,7 +16,8 @@ const createUser = async(data:any) => {
         address:data?.address,
         country:data?.country,
         role:data?.role || UserRole.USER,
-        status:data?.status || UserStatus.ACTIVE
+        status:data?.status || UserStatus.ACTIVE,
+        chatroom: data?.chatroom
 
     }
     const createUser = await prisma.user.create({

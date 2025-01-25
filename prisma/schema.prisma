@@ -21,8 +21,6 @@ model User {
   cart            Cart?
   createdAt       DateTime          @default(now())
   updatedAt       DateTime          @updatedAt
-  messages  Message[]
-  
   @@map("users")
 }
 
@@ -91,6 +89,4 @@ model Message {
   text  String
   chatroomId String @unique
   chatroom ChatRoom @relation(fields: [chatroomId],references: [id])
-  userId String
-  sender User @relation(fields: [userId],references: [id])
 }

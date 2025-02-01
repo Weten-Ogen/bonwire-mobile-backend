@@ -18,6 +18,7 @@ export const createMessage = async(data:any) => {
             chatroom: chatroom
         }
     })
+    return newmessage
 }
 
 export const getMessages = async() => {
